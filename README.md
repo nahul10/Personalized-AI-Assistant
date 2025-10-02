@@ -36,7 +36,6 @@ A personalized AI assistant that allows you to upload documents, ask questions, 
    ```bash
    python -m venv first_venv
    first_venv\Scripts\activate  # On Windows
->>>>>>> 71bd978febb219cdf462d0f6b0c745159b16ab48
    ```
 
 3. Install Python dependencies:
@@ -83,6 +82,7 @@ A personalized AI assistant that allows you to upload documents, ask questions, 
 2. In a new terminal, start the web app:
    ```bash
    cd web
+   npm install
    npm run dev
    ```
 
@@ -186,6 +186,18 @@ This project requires FFmpeg for media processing. Follow these steps to downloa
 Ensure the [.env](http://_vscodecontentref_/5) file includes the `FFMPEG_PATH` variable:
 FFMPEG_PATH=C:\ffmpeg\bin
 
+### Step 3: Modify the Code to Use FFMPEG_PATH
+If your code explicitly references FFmpeg, update it to use the FFMPEG_PATH variable from the .env file. For example:
+```
+import os
+FFMPEG_PATH = os.getenv("FFMPEG_PATH", "ffmpeg")  # Default to "ffmpeg" if not set
+
+# Example usage
+command = f"{FFMPEG_PATH} -i input.mp4 output.mp4"
+os.system(command) 
+
+```
+
 ## Usage
 
 1. Upload documents through the web interface or API.
@@ -208,17 +220,6 @@ FFMPEG_PATH=C:\ffmpeg\bin
 - Database: SQLite
 - AI: Google Gemini
 
-Step 3: Modify the Code to Use FFMPEG_PATH
-If your code explicitly references FFmpeg, update it to use the FFMPEG_PATH variable from the .env file. For example:
-```
-import os
-FFMPEG_PATH = os.getenv("FFMPEG_PATH", "ffmpeg")  # Default to "ffmpeg" if not set
-
-# Example usage
-command = f"{FFMPEG_PATH} -i input.mp4 output.mp4"
-os.system(command) 
-
-```
 ## MIT License
 
 Copyright (c) 2025 nahul10
