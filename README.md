@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-# Personal AI Coach
-
-=======
 # Personalized-AI-Assistant
->>>>>>> 71bd978febb219cdf462d0f6b0c745159b16ab48
 A personalized AI assistant that allows you to upload documents, ask questions, generate SQL queries, translate text, and more. Built with FastAPI backend and React frontend.
 
 ## Features
