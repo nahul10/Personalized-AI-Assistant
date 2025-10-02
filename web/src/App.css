@@ -1,0 +1,59 @@
+:root{
+  --bg:#0b0f14; --panel:#111826; --soft:#1a2335; --text:#e9eef7; --muted:#98a3b7;
+  --brand:#8b5cf6; --chip:#233047; --accent:#22d3ee; --good:#34d399; --bad:#ef4444;
+  --line:#233047;
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{margin:0; background:var(--bg); color:var(--text); font-family: Inter, system-ui, Segoe UI, Arial, sans-serif}
+
+.wrap{max-width:1100px; margin:0 auto; padding:20px 16px 64px}
+
+.hdr{display:flex; align-items:center; justify-content:space-between; margin-bottom:16px}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700; font-size:20px}
+.logo{width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center}
+.right{display:flex; align-items:center; gap:10px}
+.badge{padding:4px 8px; border-radius:999px; font-weight:600; font-size:12px}
+.badge.ok{background:rgba(52,211,153,.15); color:var(--good)}
+.badge.off{background:rgba(239,68,68,.15); color:var(--bad)}
+.muted{color:var(--muted); font-size:12px}
+
+.panel{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px}
+.uploader{display:flex; gap:10px}
+.uploader input[type="file"]{background:var(--soft); border:1px dashed var(--line); padding:10px; border-radius:10px; color:var(--muted)}
+button{background:var(--brand); color:white; border:0; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:600}
+button:disabled{opacity:.6; cursor:not-allowed}
+button.ghost{background:var(--soft)}
+button.ghost.live{outline:2px solid var(--accent)}
+button.link{background:transparent; color:var(--accent); padding:0; margin-top:6px}
+
+.stats{margin-top:14px}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px}
+.chip{background:var(--chip); color:var(--text); padding:6px 10px; border-radius:999px; font-size:12px}
+table{width:100%; border-collapse:collapse; border:1px solid var(--line); border-radius:10px; overflow:hidden}
+thead td, thead th{background:var(--soft); color:var(--muted); font-weight:700}
+td,th{padding:10px; border-bottom:1px solid var(--line); font-size:14px}
+tbody tr.sel{outline:2px solid var(--accent)}
+
+.chat{margin-top:16px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px}
+.scope{color:var(--muted); margin-bottom:10px}
+
+.askrow{display:flex; gap:8px; align-items:center}
+.askrow input{flex:1; background:var(--soft); border:1px solid var(--line); color:var(--text); padding:12px 14px; border-radius:12px}
+.askrow button{min-width:80px}
+
+.answerCard{margin-top:14px; border:1px solid var(--line); border-radius:12px; background:#0e1522; padding:14px}
+.answerText{font-size:18px; font-weight:700}
+.related{margin-top:10px}
+.relchips{display:flex; gap:8px; flex-wrap:wrap; margin-top:6px}
+.relchips .chip{cursor:pointer; border:1px solid var(--line)}
+.snips{margin-top:8px; display:grid; gap:6px}
+.snip{background:var(--soft); border:1px solid var(--line); padding:8px 10px; border-radius:8px; font-size:13px}
+/* optional, just light accent animation */
+.pulse {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.35) }
+  50%     { box-shadow: 0 0 0 8px rgba(34,197,94,0) }
+}

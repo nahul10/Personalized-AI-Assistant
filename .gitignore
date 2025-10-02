@@ -1,0 +1,39 @@
+# Virtual environments
+first_venv/
+venv/
+env/
+.venv/
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+
+# Artifacts and data (may contain sensitive info)
+artifacts/
+data/
+
+# Node modules
+node_modules/
+
+# Build files
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.swp
