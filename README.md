@@ -27,7 +27,6 @@ A personalized AI assistant that allows you to upload documents, ask questions, 
    cd personal_coach
    ```
 
-<<<<<<< HEAD
 2. Set up Python virtual environment (if not already present):
    ```bash
    python -m venv venv
@@ -124,7 +123,6 @@ If you want to push this project to a new GitHub repository:
    Replace `your-username` and `your-repo-name` with your actual GitHub username and repository name.
 
 =======
->>>>>>> 71bd978febb219cdf462d0f6b0c745159b16ab48
 ## API Endpoints
 
 The backend provides the following endpoints:
@@ -138,6 +136,55 @@ The backend provides the following endpoints:
 - `POST /reset_index` - Reset the index
 - `GET /files` - List uploaded files
 - `GET /history` - Get Q&A history
+
+## FFmpeg Setup Instructions
+
+This project requires FFmpeg for media processing. Follow these steps to download and set up FFmpeg:
+
+1. Download FFmpeg:
+   - Go to the official FFmpeg website: [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html).
+   - Select the appropriate build for your operating system:
+     - **Windows**: Download the latest static build from [Gyan.dev](https://www.gyan.dev/ffmpeg/builds/).
+     - **macOS**: Use Homebrew (`brew install ffmpeg`).
+     - **Linux**: Install via your package manager (e.g., `sudo apt install ffmpeg`).
+
+2. Extract the FFmpeg Archive:
+   - Extract the downloaded `.zip` or `.tar.gz` file to a directory of your choice (e.g., `C:\ffmpeg` on Windows).
+
+3. Add FFmpeg to the System PATH:
+   - Windows:
+     1. Open the Start Menu and search for "Environment Variables."
+     2. Click "Edit the system environment variables."
+     3. In the "System Properties" window, click "Environment Variables."
+     4. Under "System variables," find the `Path` variable and click "Edit."
+     5. Click "New" and add the path to the `bin` folder inside the extracted FFmpeg directory (e.g., `C:\ffmpeg\bin`).
+     6. Click "OK" to save the changes.
+   - macOS/Linux:
+     - Add the following line to your shell configuration file (`~/.bashrc`, `~/.zshrc`, etc.):
+       ```bash
+       export PATH="/path/to/ffmpeg/bin:$PATH"
+       ```
+     - Replace `/path/to/ffmpeg/bin` with the actual path to the `bin` folder inside the extracted FFmpeg directory.
+     - Run `source ~/.bashrc` or `source ~/.zshrc` to apply the changes.
+
+4. Verify the Installation:
+   - Open a terminal or command prompt and run:
+     ```bash
+     ffmpeg -version
+     ```
+   - You should see the FFmpeg version information if it is installed correctly.
+
+5. Update the [.env](http://_vscodecontentref_/2) File:
+   - Add the path to the FFmpeg `bin` folder in the [.env](http://_vscodecontentref_/3) file:
+     ```plaintext
+     FFMPEG_PATH=C:\ffmpeg\bin
+     ```
+
+---
+
+### Step 2: Update the [.env](http://_vscodecontentref_/4) File
+Ensure the [.env](http://_vscodecontentref_/5) file includes the `FFMPEG_PATH` variable:
+FFMPEG_PATH=C:\ffmpeg\bin
 
 ## Usage
 
@@ -161,6 +208,17 @@ The backend provides the following endpoints:
 - Database: SQLite
 - AI: Google Gemini
 
+Step 3: Modify the Code to Use FFMPEG_PATH
+If your code explicitly references FFmpeg, update it to use the FFMPEG_PATH variable from the .env file. For example:
+```
+import os
+FFMPEG_PATH = os.getenv("FFMPEG_PATH", "ffmpeg")  # Default to "ffmpeg" if not set
+
+# Example usage
+command = f"{FFMPEG_PATH} -i input.mp4 output.mp4"
+os.system(command) 
+
+```
 ## MIT License
 
 Copyright (c) 2025 nahul10
