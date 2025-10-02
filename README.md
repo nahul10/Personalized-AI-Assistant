@@ -31,19 +31,19 @@ A personalized AI assistant that allows you to upload documents, ask questions, 
    ```bash
    python -m venv venv
    venv\Scripts\activate  # On Windows
-=======
-2. Set up Python virtual environment:
+
+3. Set up Python virtual environment:
    ```bash
    python -m venv first_venv
    first_venv\Scripts\activate  # On Windows
    ```
 
-3. Install Python dependencies:
+4. Install Python dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Install Node.js dependencies for the web app:
+5. Install Node.js dependencies for the web app:
    ```bash
    cd web
    npm install
@@ -88,7 +88,6 @@ A personalized AI assistant that allows you to upload documents, ask questions, 
 
 3. Open your browser and go to `http://localhost:5173` (or the URL shown by Vite).
 
-<<<<<<< HEAD
 ## Pushing to GitHub
 
 If you want to push this project to a new GitHub repository:
