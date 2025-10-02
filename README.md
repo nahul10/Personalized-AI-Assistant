@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 # Personal AI Coach
 
+=======
+# Personalized-AI-Assistant
+>>>>>>> 71bd978febb219cdf462d0f6b0c745159b16ab48
 A personalized AI assistant that allows you to upload documents, ask questions, generate SQL queries, translate text, and more. Built with FastAPI backend and React frontend.
 
 ## Features
@@ -28,10 +32,17 @@ A personalized AI assistant that allows you to upload documents, ask questions, 
    cd personal_coach
    ```
 
+<<<<<<< HEAD
 2. Set up Python virtual environment (if not already present):
    ```bash
    python -m venv venv
    venv\Scripts\activate  # On Windows
+=======
+2. Set up Python virtual environment:
+   ```bash
+   python -m venv first_venv
+   first_venv\Scripts\activate  # On Windows
+>>>>>>> 71bd978febb219cdf462d0f6b0c745159b16ab48
    ```
 
 3. Install Python dependencies:
@@ -83,6 +94,7 @@ A personalized AI assistant that allows you to upload documents, ask questions, 
 
 3. Open your browser and go to `http://localhost:5173` (or the URL shown by Vite).
 
+<<<<<<< HEAD
 ## Pushing to GitHub
 
 If you want to push this project to a new GitHub repository:
@@ -116,6 +128,8 @@ If you want to push this project to a new GitHub repository:
 
    Replace `your-username` and `your-repo-name` with your actual GitHub username and repository name.
 
+=======
+>>>>>>> 71bd978febb219cdf462d0f6b0c745159b16ab48
 ## API Endpoints
 
 The backend provides the following endpoints:
